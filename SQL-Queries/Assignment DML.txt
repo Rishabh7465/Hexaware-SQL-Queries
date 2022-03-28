@@ -1,0 +1,31 @@
+-- DML queries file
+use practicedml;
+-- 1
+create table my_employee(
+id int(4),
+first_name varchar(25),
+last_name varchar(25),
+userid varchar(8),
+salary double(9,2)
+);
+-- 1
+desc my_employee;
+-- 2
+insert into my_employee values (1,'Ralph','Patel','rpatel',895);
+delete from my_employee;
+-- 3
+insert into my_employee(id, last_name, first_name, userid, salary) values (2,'Dancs','Betty','bdancs',860);
+-- 4
+select * from my_employee;
+-- 5
+
+-- 6 changing second because third is not given
+alter table my_employee add  primary key(id);
+update my_employee set last_name = 'drecler' where id = 2; 
+-- 7
+select * from my_employee;
+update my_employee set salary = 1000 where salary < 900 ;
+-- 8
+delete from my_employee where first_name = 'betty';
+-- 9
+delete from my_employee;

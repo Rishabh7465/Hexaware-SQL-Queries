@@ -1,0 +1,27 @@
+create database practice;
+use practice ;
+-- 1 
+create table TRG_DEPT(
+ID int(7),
+NAME varchar(25)
+);
+-- 3
+create table TRG_EMP(
+ID int(7),
+LAST_NAME varchar(25),
+FIRST_NAME varchar(25),
+DEPT_ID int(7)
+);
+-- 4
+alter table TRG_EMP modify LAST_NAME varchar(50);
+-- 5 salay not included
+create table employee
+select ID as ID, FIRST_NAME as FIRST_NAME, LAST_NAME as LAST_NAME, DEPT_ID as DEPT_ID
+from TRG_EMP;
+-- 6
+drop table TRG_EMP;
+-- 7 not working rename employee to emp !
+alter table EMPLOYEE Rename to EMP;
+-- 8 
+alter table emp drop column FIRST_NAME;
+desc emp;
